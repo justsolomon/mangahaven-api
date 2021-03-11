@@ -12,10 +12,10 @@ exports.getChapterImages = (req, res) => {
     .then((html) => {
       const root = parse(html);
       const imageDomain = JSON.parse(
-        scrapeScript(root, "vm.CurPathName", "vm.CHAPTER")
+        scrapeScript(root, "vm.CurPathNames", "vm.CHAPTER")
       );
       const chapter = JSON.parse(
-        scrapeScript(root, "vm.CurChapter", "vm.CurPathName")
+        scrapeScript(root, "vm.CurChapter", "/*")
       );
       const allChapters = JSON.parse(
         scrapeScript(root, "vm.CHAPTERS", "vm.IndexName")
@@ -67,8 +67,10 @@ const getPrevAndNext = (current, allChapters) => {
     delete nextChapter.Directory;
   }
 
-  if (allChapters.length === 1) return { prevChapter: null, nextChapter: null, ...currentChapter };
-  else if (index === 0) return { prevChapter: null, nextChapter, ...currentChapter };
+  if (allChapters.length === 1)
+    return { prevChapter: null, nextChapter: null, ...currentChapter };
+  else if (index === 0)
+    return { prevChapter: null, nextChapter, ...currentChapter };
   else if (index === chaptersLength - 1)
     return { prevChapter, nextChapter: null, ...currentChapter };
   else return { prevChapter, nextChapter, ...currentChapter };
