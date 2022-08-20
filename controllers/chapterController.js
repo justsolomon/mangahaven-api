@@ -12,10 +12,10 @@ exports.getChapterImages = (req, res) => {
     .then((html) => {
       const root = parse(html);
       const imageDomain = JSON.parse(
-        scrapeScript(root, "vm.CurPathNames", "vm.CHAPTER")
+        scrapeScript(root, "vm.CurPathName", "vm.CHAPTER")
       );
       const chapter = JSON.parse(
-        scrapeScript(root, "vm.CurChapter", "/*")
+        scrapeScript(root, "vm.CurChapter", "vm.CurPathName")
       );
       const allChapters = JSON.parse(
         scrapeScript(root, "vm.CHAPTERS", "vm.IndexName")
