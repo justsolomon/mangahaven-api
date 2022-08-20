@@ -58,7 +58,7 @@ const getMangaInGenre = (genre, allManga, max) => {
       const { i, s, g } = manga;
       if (g.includes(genre)) {
         genreManga.push({
-          imageUrl: `https://cover.nep.li/cover/${i}.jpg`,
+          imageUrl: `https://temp.compsci88.com/cover/${i}.jpg`,
           name: s,
           serialName: i,
         });
