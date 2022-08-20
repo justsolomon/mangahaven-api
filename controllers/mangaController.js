@@ -33,7 +33,7 @@ exports.getMangaDetails = (req, res) => {
 const fetchMangaInfo = (root, name) => {
   const manga = {
     alias: name,
-    imageUrl: `https://cover.nep.li/cover/${name}.jpg`,
+    imageUrl: `https://temp.compsci88.com/cover/${name}.jpg`,
     name: root.querySelector("h1").rawText,
     description: root.querySelector(".Content").rawText,
   };
