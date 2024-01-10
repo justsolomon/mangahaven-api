@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/main.js",
+    "start": "node server/server.js",
     "build": "netlify build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,8 +13,6 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",
     "express": "^4.17.1",
-    "netlify": "^13.1.12",
-    "netlify-cli": "^17.13.0",
     "node-fetch": "^2.6.1",
     "node-html-parser": "^2.1.0",
     "request": "^2.88.2",
