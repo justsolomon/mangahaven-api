@@ -1,4 +1,5 @@
 const express = require("express");
+const serverless = require("serverless-http");
 const routes = require("../routes");
 
 const app = express();
@@ -13,4 +14,4 @@ app.listen(process.env.PORT || 3000, function () {
   );
 });
 
-module.exports.handler = app;
+module.exports.handler = serverless(app);
