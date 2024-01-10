@@ -20,3 +20,5 @@ router.get("/all-genres", getAllGenres);
 router.get("/genre/:genreName", getSingleGenre);
 router.get("/manga/:name", getMangaDetails);
 router.get("/:mangaName/chapter/:chapterNumber", getChapterImages);
+
+module.exports = router;
