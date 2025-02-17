@@ -1,4 +1,4 @@
-exports.baseUrl = "https://manga4life.com/";
+exports.baseUrl = "https://weebcentral.com/";
 
 exports.scrapeScript = (root, begin, end) => {
   for (script of root.querySelectorAll("script")) {
